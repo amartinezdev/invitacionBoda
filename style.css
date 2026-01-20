@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* TIPOGRAFÍA */
+.pacifico {
+  font-family: "Pacifico", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  background: transparent;
+  border-bottom: none;
+}
+
+/* COUNTDOWN */
+.countdown-section {
+  margin: 40px 0;
+}
+
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.countdown-display > div {
+  text-align: center;
+}
+
+.countdown-value {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #dc3545;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.countdown-text {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CARDS */
+.card {
+  border-radius: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* BOTÓN */
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+}
+
+/* FOOTER */
+footer {
+  background-color: #2c3e50;
+  margin-top: auto;
+}
