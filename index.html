@@ -30,8 +30,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- HERO / ENCABEZADO -->
-    <header class="hero">
+    <!-- PANTALLA DE BIENVENIDA - CARTA -->
+    <div id="pantalla-carta" class="pantalla-carta">
+      <div class="sobre">
+        <div class="sobre-solapa"></div>
+        <div class="carta">
+          <div class="carta-contenido">
+            <div class="carta-sello">💌</div>
+            <p class="carta-subtitulo">Estás invitado/a a la boda de</p>
+            <h1 class="carta-titulo">Adrián <span>&</span> Marina</h1>
+            <p class="carta-fecha">01 de Mayo de 2026</p>
+            <div class="carta-ornamento">❦</div>
+            <button id="btn-abrir-invitacion" class="btn-abrir">
+              <i class="fas fa-envelope-open"></i>
+              <span>Abrir invitación</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="contenido-principal" class="contenido-oculto">
+      <!-- HERO / ENCABEZADO -->
+      <header class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-subtitle">¡Nos casamos!</p>
@@ -68,6 +90,14 @@
     </section>
 
     <!-- AUDIO -->
+    <audio id="musica-boda" style="display: none" loop>
+      <source src="music/Christina Perri - A Thousand Years.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button id="btn-musica" class="btn-musica-flotante" title="Reproducir música">
+      <i class="fas fa-music"></i>
+    </button>
+
     <section class="audio-section">
       <div class="container">
         <p class="audio-text"><i class="fas fa-music"></i> Nuestra canción</p>
@@ -85,7 +115,7 @@
     <!-- CONTADOR -->
     <section class="countdown-section">
       <div class="container">
-        <h2>Cuenta atrás</h2>
+        <h2>Faltan</h2>
         <div class="countdown-display">
           <div class="countdown-item">
             <span class="countdown-value" id="dias">0</span>
@@ -104,6 +134,7 @@
             <span class="countdown-label">Seg</span>
           </div>
         </div>
+        <h2>para nuestra boda!❤️</h2>
       </div>
     </section>
 
@@ -211,6 +242,7 @@
       <p class="footer-date">01 · 05 · 2026</p>
       <p class="footer-copy">&copy; 2026 - Con todo nuestro amor</p>
     </footer>
+    </div><!-- Cierre de contenido-principal -->
 
     <script src="js.js"></script>
   </body>

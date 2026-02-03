@@ -1,3 +1,58 @@
+// Control de la pantalla de bienvenida (carta)
+function inicializarCarta() {
+  const pantallaCarta = document.getElementById('pantalla-carta');
+  const contenidoPrincipal = document.getElementById('contenido-principal');
+  const btnAbrir = document.getElementById('btn-abrir-invitacion');
+  const audio = document.getElementById('musica-boda');
+  const btnMusica = document.getElementById('btn-musica');
+
+  // Bloquear scroll inicialmente
+  document.body.classList.add('scroll-bloqueado');
+
+  btnAbrir.addEventListener('click', () => {
+    // Ocultar la carta
+    pantallaCarta.classList.add('oculta');
+    
+    // Desbloquear scroll
+    document.body.classList.remove('scroll-bloqueado');
+    
+    // Mostrar el contenido principal
+    contenidoPrincipal.classList.remove('contenido-oculto');
+    contenidoPrincipal.classList.add('contenido-visible');
+    
+    // Reproducir la música
+    audio.play().then(() => {
+      btnMusica.classList.add('reproduciendo');
+    }).catch(err => {
+      console.log('No se pudo reproducir automáticamente:', err);
+    });
+  });
+}
+
+// Control de música
+function inicializarMusica() {
+  const audio = document.getElementById('musica-boda');
+  const btnMusica = document.getElementById('btn-musica');
+
+  // Botón para controlar la música
+  btnMusica.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (audio.paused) {
+      audio.muted = false;
+      audio.play();
+      btnMusica.classList.add('reproduciendo');
+    } else {
+      audio.pause();
+      btnMusica.classList.remove('reproduciendo');
+    }
+  });
+
+  // Actualizar estado del botón cuando termina la canción
+  audio.addEventListener('ended', () => {
+    btnMusica.classList.remove('reproduciendo');
+  });
+}
+
 // Contador regresivo hacia el 1 de mayo de 2026
 function actualizarContador() {
   // Fecha objetivo: 1 de mayo de 2026 a las 12:00
@@ -31,5 +86,9 @@ function actualizarContador() {
   }, 1000);
 }
 
-// Iniciar el contador cuando se carga la página
-document.addEventListener("DOMContentLoaded", actualizarContador);
+// Iniciar todo cuando se carga la página
+document.addEventListener("DOMContentLoaded", () => {
+  inicializarCarta();
+  actualizarContador();
+  inicializarMusica();
+});
