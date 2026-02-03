@@ -36,7 +36,9 @@ body.scroll-bloqueado {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 
 .pantalla-carta.oculta {
@@ -63,23 +65,23 @@ body.scroll-bloqueado {
   border-right: 200px solid transparent;
   border-bottom: 80px solid #d4a574;
   z-index: 1;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
 }
 
 .carta {
   background: linear-gradient(180deg, #fffef9 0%, #faf6f0 100%);
   border-radius: 8px;
   padding: 40px 30px;
-  box-shadow: 
-    0 15px 35px rgba(0,0,0,0.15),
-    0 5px 15px rgba(0,0,0,0.08),
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.08),
     inset 0 0 60px rgba(212, 165, 116, 0.1);
   border: 2px solid #e8dcc8;
   position: relative;
 }
 
 .carta::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   left: 10px;
@@ -103,8 +105,13 @@ body.scroll-bloqueado {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .carta-subtitulo {
@@ -182,26 +189,30 @@ body.scroll-bloqueado {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 480px) {
   .carta {
     padding: 30px 20px;
   }
-  
+
   .carta-titulo {
     font-size: 2.3rem;
   }
-  
+
   .sobre-solapa {
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
     border-bottom: 60px solid #d4a574;
     top: -45px;
   }
-  
+
   .btn-abrir {
     padding: 12px 25px;
     font-size: 0.9rem;
@@ -783,7 +794,8 @@ footer {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
