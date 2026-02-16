@@ -193,9 +193,9 @@
             <p class="event-address">Lugar de ensueño para<br />nuestra celebración</p>
             <div class="event-time">
               <i class="far fa-clock"></i>
-              <span>15:00 h</span>
+              <span>14:00 h</span>
             </div>
-            <p class="event-note">Cena, baile y diversión hasta el amanecer</p>
+            <p class="event-note">Cóctel ambientado, comida, concierto, diversión, atardecer, cena, mucho dulce y disfrutar hasta no poder más</p>
             <a href="https://maps.app.goo.gl/CAckKYSdKsj1H9AMA?g_st=iw" target="_blank" class="btn-location">
               <i class="fas fa-map-marker-alt"></i> Cómo llegar
             </a>
@@ -203,6 +203,120 @@
               <i class="fab fa-instagram"></i> @larachecelebraciones
             </a>
           </div>
+        </div>
+      </section>
+
+      <!-- SEPARADOR DECORATIVO -->
+      <div class="divider">
+        <span>⏰</span>
+      </div>
+
+      <!-- TIMELINE DEL DÍA -->
+      <section class="timeline-section">
+        <div class="container">
+          <h2>El gran día</h2>
+          <p class="timeline-intro">Te compartimos los detalles de la celebración</p>
+
+          <div class="timeline">
+            <div class="timeline-progress" id="timeline-progress"></div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:45</div>
+              <div class="timeline-dot"><i class="fas fa-church"></i></div>
+              <div class="timeline-content">
+                <h3>Ceremonia</h3>
+                <p>Nos damos el «Sí, quiero» en la Iglesia</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-dot"><i class="fas fa-champagne-glasses"></i></div>
+              <div class="timeline-content">
+                <h3>Cóctel de bienvenida</h3>
+                <p>Recepción con aperitivos y música en vivo</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">16:00</div>
+              <div class="timeline-dot"><i class="fas fa-utensils"></i></div>
+              <div class="timeline-content">
+                <h3>Comida</h3>
+                <p>Menú especial para disfrutar juntos</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">19:00</div>
+              <div class="timeline-dot"><i class="fas fa-guitar"></i></div>
+              <div class="timeline-content">
+                <h3>Concierto</h3>
+                <p>Música en directo mientras cae el sol</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">20:30</div>
+              <div class="timeline-dot"><i class="fas fa-sun"></i></div>
+              <div class="timeline-content">
+                <h3>Atardecer</h3>
+                <p>El momento más mágico del día</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">21:30</div>
+              <div class="timeline-dot"><i class="fas fa-moon"></i></div>
+              <div class="timeline-content">
+                <h3>Cena</h3>
+                <p>Deliciosa cena bajo las estrellas</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">23:30</div>
+              <div class="timeline-dot"><i class="fas fa-cake-candles"></i></div>
+              <div class="timeline-content">
+                <h3>Tarta y dulces</h3>
+                <p>¡A endulzar la noche!</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">00:00</div>
+              <div class="timeline-dot"><i class="fas fa-music"></i></div>
+              <div class="timeline-content">
+                <h3>Fiesta</h3>
+                <p>¡A bailar hasta no poder más!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIRMAR ASISTENCIA -->
+      <section class="rsvp-section">
+        <div class="container">
+          <h2>¿Nos acompañas?</h2>
+          <p>Confirma tu asistencia antes del 1 de Abril</p>
+          <p class="rsvp-warning"><i class="fas fa-bell"></i>15 días antes enviaremos un recordatorio a los despistados 😉</p>
+          <a href="https://forms.gle/pynaehnZYL6uRCXS7" target="_blank" class="btn-rsvp" type="button"
+            ><i class="fas fa-heart"></i> Confirmar asistencia</a
+          >
+        </div>
+      </section>
+
+      <!-- REGALO / NÚMERO DE CUENTA -->
+      <section class="gift-section">
+        <div class="container">
+          <span>🎁</span>
+          <h2>Lista de bodas</h2>
+          <p>Vuestra presencia es el mejor regalo, pero si deseáis tener un detalle con nosotros...</p>
+          <div class="cuenta-container" id="cuenta-container" onclick="revelarCuenta()">
+            <span class="cuenta-oculta" id="cuenta-oculta"> <i class="fas fa-gift"></i> Toca aquí </span>
+            <span class="cuenta-visible" id="cuenta-visible"> ES44 0081 2804 6400 0403 9913 </span>
+          </div>
+          <button class="btn-copiar" id="btn-copiar" onclick="copiarCuenta()" style="display: none"><i class="fas fa-copy"></i> Copiar</button>
         </div>
       </section>
 
@@ -236,31 +350,6 @@
               <img src="img/WhatsApp Image 2026-02-03 at 17.31.20 (3).jpeg" alt="Foto 8" />
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- CONFIRMAR ASISTENCIA -->
-      <section class="rsvp-section">
-        <div class="container">
-          <h2>¿Nos acompañas?</h2>
-          <p>Confirma tu asistencia antes del 1 de Abril</p>
-          <a href="https://forms.gle/pynaehnZYL6uRCXS7" target="_blank" class="btn-rsvp" type="button"
-            ><i class="fas fa-heart"></i> Confirmar asistencia</a
-          >
-        </div>
-      </section>
-
-      <!-- REGALO / NÚMERO DE CUENTA -->
-      <section class="gift-section">
-        <div class="container">
-          <span>🎁</span>
-          <h2>Lista de bodas</h2>
-          <p>Vuestra presencia es el mejor regalo, pero si deseáis tener un detalle con nosotros...</p>
-          <div class="cuenta-container" id="cuenta-container" onclick="revelarCuenta()">
-            <span class="cuenta-oculta" id="cuenta-oculta"> <i class="fas fa-gift"></i> Toca aquí </span>
-            <span class="cuenta-visible" id="cuenta-visible"> ES44 0081 2804 6400 0403 9913 </span>
-          </div>
-          <button class="btn-copiar" id="btn-copiar" onclick="copiarCuenta()" style="display: none"><i class="fas fa-copy"></i> Copiar</button>
         </div>
       </section>
 

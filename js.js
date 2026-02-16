@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   inicializarCarta();
   actualizarContador();
   inicializarMusica();
+  inicializarTimeline();
 });
 
 // Revelar número de cuenta
@@ -119,4 +120,53 @@ function copiarCuenta() {
       btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
     }, 2000);
   });
+}
+
+// Timeline con scroll
+function inicializarTimeline() {
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const timelineProgress = document.getElementById("timeline-progress");
+  const timeline = document.querySelector(".timeline");
+
+  if (!timeline || !timelineProgress) return;
+
+  // Intersection Observer para los items
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -100px 0px",
+    threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  timelineItems.forEach((item) => {
+    observer.observe(item);
+  });
+
+  // Actualizar línea de progreso con scroll
+  function actualizarProgreso() {
+    const timelineRect = timeline.getBoundingClientRect();
+    const timelineTop = timelineRect.top;
+    const timelineHeight = timelineRect.height;
+    const windowHeight = window.innerHeight;
+
+    // Calcular el progreso basado en la posición del viewport
+    let progress = 0;
+
+    if (timelineTop < windowHeight * 0.7) {
+      const scrolled = windowHeight * 0.7 - timelineTop;
+      progress = Math.min(scrolled / timelineHeight, 1);
+    }
+
+    timelineProgress.style.height = progress * 100 + "%";
+  }
+
+  window.addEventListener("scroll", actualizarProgreso);
+  actualizarProgreso(); // Llamar una vez al inicio
 }

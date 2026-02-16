@@ -825,6 +825,38 @@ h2 {
   margin-bottom: 30px;
 }
 
+.rsvp-warning {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rsvp-warning i {
+  animation: ring 1.5s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(10deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
 .btn-rsvp {
   display: inline-flex;
   align-items: center;
@@ -847,6 +879,184 @@ h2 {
 
 .btn-rsvp i {
   color: #e74c3c;
+}
+
+/* ===== TIMELINE ===== */
+.timeline-section {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #faf8f5 0%, #f5efe8 100%);
+}
+
+.timeline-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #2c2c2c;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.timeline-intro {
+  text-align: center;
+  color: #8b7355;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Línea de fondo (gris) */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 105px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #e0d5c7;
+  border-radius: 3px;
+  z-index: 0;
+}
+
+/* Línea de progreso (dorada) */
+.timeline-progress {
+  position: absolute;
+  left: 105px;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, #d4a574 0%, #c9956a 100%);
+  border-radius: 3px;
+  transition: height 0.3s ease;
+  z-index: 1;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease;
+  z-index: 3;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-time {
+  flex: 0 0 80px;
+  text-align: right;
+  padding-right: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #d4a574;
+}
+
+.timeline-dot {
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  background: #e0d5c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.timeline-item.visible .timeline-dot {
+  background: linear-gradient(135deg, #d4a574 0%, #c9956a 100%);
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.6);
+}
+
+.timeline-content {
+  flex: 1;
+  padding-left: 25px;
+}
+
+.timeline-content h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .timeline::before,
+  .timeline-progress {
+    left: 70px;
+  }
+
+  .timeline-item {
+    flex-wrap: wrap;
+    transform: translateX(-30px);
+    margin-bottom: 80px;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-item.visible {
+    transform: translateX(0);
+  }
+
+  .timeline-time {
+    flex: 0 0 50px;
+    padding-right: 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .timeline-dot {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .timeline-content {
+    flex: 1 0 calc(100% - 100px);
+    padding-left: 15px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+  }
 }
 
 /* ===== SECCIÓN REGALO ===== */
