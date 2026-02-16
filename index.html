@@ -30,22 +30,48 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- PANTALLA DE BIENVENIDA - CARTA -->
+    <!-- PANTALLA DE BIENVENIDA - SELLO DE LACRE -->
     <div id="pantalla-carta" class="pantalla-carta">
-      <div class="sobre">
-        <div class="carta">
-          <div class="carta-contenido">
-            <div class="carta-sello">💌</div>
-            <p class="carta-subtitulo">Estás invitado/a a la boda de</p>
-            <h1 class="carta-titulo">Adrián <span>&</span> Marina</h1>
-            <p class="carta-fecha">01 de Mayo de 2026</p>
-            <div class="carta-ornamento">❦</div>
-            <button id="btn-abrir-invitacion" class="btn-abrir">
-              <i class="fas fa-envelope-open"></i>
-              <span>Abrir invitación</span>
-            </button>
-          </div>
+      <!-- Corazones flotantes de fondo -->
+      <div class="corazones-flotantes">
+        <span class="corazon">❤</span>
+        <span class="corazon">💕</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💗</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💕</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💗</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💕</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💗</span>
+        <span class="corazon">💕</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💗</span>
+        <span class="corazon">❤</span>
+        <span class="corazon">💕</span>
+      </div>
+
+      <div class="invitacion-lacre">
+        <div class="invitacion-texto">
+          <p class="lacre-subtitulo">Estás cordialmente invitado/a</p>
+          <p class="lacre-a">a la boda de</p>
+          <h1 class="lacre-nombres">Marina <span>&</span> Adrián</h1>
+          <p class="lacre-fecha">01 · Mayo · 2026</p>
         </div>
+
+        <div class="sello-container">
+          <button id="btn-abrir-invitacion" class="sello-lacre">
+            <div class="sello-borde"></div>
+            <div class="sello-interior">
+              <span class="sello-iniciales">M&A</span>
+              <span class="sello-texto">Toca para abrir</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="lineas-decorativas"><span></span><span></span><span></span></div>
       </div>
     </div>
 
@@ -56,7 +82,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <p class="hero-subtitle">¡Nos casamos!</p>
-          <h1 class="hero-title">Adrián <span>&</span> Marina</h1>
+          <h1 class="hero-title">Marina <span>&</span> Adrián</h1>
           <div class="hero-date">
             <span class="date-day">01</span>
             <span class="date-month">Mayo</span>
@@ -81,8 +107,8 @@
           <div class="ornament">❦</div>
           <h2>Queridos familiares y amigos</h2>
           <p>
-            Después de años de espera, ha llegado el momento. Os invitamos a compartir con nosotros uno de los días más especiales de nuestras vidas.
-            Será un honor contar con vuestra presencia en esta celebración llena de amor y alegría.
+            Después de años de espera, ha llegado el momento que tanto hemos soñado. Nos encantaría contar vuestra presencia para compartir uno de los
+            días más especiales de nuestras vidas, lleno de amor, alegría y recuerdos inolvidables.
           </p>
           <div class="ornament">❦</div>
         </div>
@@ -119,7 +145,7 @@
               <span class="countdown-label">Seg</span>
             </div>
           </div>
-          <h2>para nuestra boda!❤️</h2>
+          <h2>para nuestra boda</h2>
         </div>
       </section>
 
@@ -136,14 +162,16 @@
             <div class="event-icon">
               <i class="fas fa-church"></i>
             </div>
-            <h3>Iglesia de San Juan Bautista</h3>
-            <p class="event-address">Plaza Mayor, 15<br />28001 - Madrid</p>
+            <h3>Iglesia Parroquial de Santiago Apóstol</h3>
+            <p class="event-address">Plaza Santiago, 2<br />03300 - Alicante</p>
             <div class="event-time">
               <i class="far fa-clock"></i>
-              <span>12:00 h</span>
+              <span>11:45 h</span>
             </div>
             <p class="event-note">Por favor, llega 15 minutos antes</p>
-            <a href="#" class="btn-location" id="btn-iglesia"> <i class="fas fa-map-marker-alt"></i> Cómo llegar </a>
+            <a href="https://maps.app.goo.gl/Q5atDAj3aAC7ZnPJ7?g_st=iw" target="_blank" class="btn-location" id="btn-iglesia">
+              <i class="fas fa-map-marker-alt"></i> Cómo llegar
+            </a>
           </div>
         </div>
       </section>
@@ -190,16 +218,16 @@
               <img src="img/WhatsApp Image 2026-02-03 at 17.31.19 (1).jpeg" alt="Foto 2" />
             </div>
             <div class="gallery-item">
-              <img src="img/WhatsApp Image 2026-02-03 at 17.31.19 (2).jpeg" alt="Foto 3" />
+              <img src="img/WhatsApp Image 2026-02-03 at 17.31.19 (3).jpeg" alt="Foto 3" />
             </div>
             <div class="gallery-item">
-              <img src="img/WhatsApp Image 2026-02-03 at 17.31.19 (3).jpeg" alt="Foto 4" />
+              <img src="img/WhatsApp Image 2026-02-12 at 16.36.14.jpeg" alt="Foto 4" />
             </div>
             <div class="gallery-item">
-              <img src="img/WhatsApp Image 2026-02-03 at 17.31.20.jpeg" alt="Foto 5" />
+              <img src="img/WhatsApp Image 2026-02-03 at 17.31.20 (1).jpeg" alt="Foto 5" />
             </div>
             <div class="gallery-item">
-              <img src="img/WhatsApp Image 2026-02-03 at 17.31.20 (1).jpeg" alt="Foto 6" />
+              <img src="img/WhatsApp Image 2026-02-03 at 17.31.20.jpeg" alt="Foto 6" />
             </div>
             <div class="gallery-item">
               <img src="img/WhatsApp Image 2026-02-03 at 17.31.20 (2).jpeg" alt="Foto 7" />
@@ -216,14 +244,30 @@
         <div class="container">
           <h2>¿Nos acompañas?</h2>
           <p>Confirma tu asistencia antes del 1 de Abril</p>
-          <button class="btn-rsvp" type="button"><i class="fas fa-heart"></i> Confirmar asistencia</button>
+          <a href="https://forms.gle/pynaehnZYL6uRCXS7" target="_blank" class="btn-rsvp" type="button"
+            ><i class="fas fa-heart"></i> Confirmar asistencia</a
+          >
+        </div>
+      </section>
+
+      <!-- REGALO / NÚMERO DE CUENTA -->
+      <section class="gift-section">
+        <div class="container">
+          <span>🎁</span>
+          <h2>Lista de bodas</h2>
+          <p>Vuestra presencia es el mejor regalo, pero si deseáis tener un detalle con nosotros...</p>
+          <div class="cuenta-container" id="cuenta-container" onclick="revelarCuenta()">
+            <span class="cuenta-oculta" id="cuenta-oculta"> <i class="fas fa-gift"></i> Toca aquí </span>
+            <span class="cuenta-visible" id="cuenta-visible"> ES44 0081 2804 6400 0403 9913 </span>
+          </div>
+          <button class="btn-copiar" id="btn-copiar" onclick="copiarCuenta()" style="display: none"><i class="fas fa-copy"></i> Copiar</button>
         </div>
       </section>
 
       <!-- FOOTER -->
       <footer>
         <div class="footer-hearts">❤️ ❤️ ❤️</div>
-        <p class="footer-names">Adrián & Marina</p>
+        <p class="footer-names">Marina & Adrián</p>
         <p class="footer-date">01 · 05 · 2026</p>
         <p class="footer-copy">&copy; 2026 - Con todo nuestro amor</p>
       </footer>

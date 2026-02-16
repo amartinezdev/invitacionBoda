@@ -24,7 +24,7 @@ body.scroll-bloqueado {
   height: 100vh;
 }
 
-/* ===== PANTALLA DE CARTA/INVITACIÓN ===== */
+/* ===== PANTALLA DE SELLO DE LACRE ===== */
 .pantalla-carta {
   position: fixed;
   top: 0;
@@ -37,143 +37,308 @@ body.scroll-bloqueado {
   justify-content: center;
   z-index: 9999;
   transition:
-    opacity 0.8s ease,
-    visibility 0.8s ease;
+    opacity 1s ease,
+    visibility 1s ease,
+    transform 1s ease;
+  overflow: hidden;
 }
 
 .pantalla-carta.oculta {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transform: scale(1.1);
 }
 
-.sobre {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  perspective: 1000px;
-}
-
-.sobre-solapa {
+/* Corazones flotantes */
+.corazones-flotantes {
   position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-bottom: 80px solid #d4a574;
-  z-index: 1;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-}
-
-.carta {
-  background: linear-gradient(180deg, #fffef9 0%, #faf6f0 100%);
-  border-radius: 8px;
-  padding: 40px 30px;
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.15),
-    0 5px 15px rgba(0, 0, 0, 0.08),
-    inset 0 0 60px rgba(212, 165, 116, 0.1);
-  border: 2px solid #e8dcc8;
-  position: relative;
-}
-
-.carta::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 1px solid #d4a574;
-  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.carta-contenido {
+.corazon {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.4;
+  animation: flotar 15s infinite ease-in-out;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.corazon:nth-child(1) {
+  left: 3%;
+  animation-delay: -1s;
+  animation-duration: 6s;
+}
+.corazon:nth-child(2) {
+  left: 10%;
+  animation-delay: -4s;
+  animation-duration: 7s;
+}
+.corazon:nth-child(3) {
+  left: 18%;
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.corazon:nth-child(4) {
+  left: 25%;
+  animation-delay: -6s;
+  animation-duration: 8s;
+}
+.corazon:nth-child(5) {
+  left: 33%;
+  animation-delay: -3s;
+  animation-duration: 6s;
+}
+.corazon:nth-child(6) {
+  left: 42%;
+  animation-delay: -5s;
+  animation-duration: 7s;
+}
+.corazon:nth-child(7) {
+  left: 50%;
+  animation-delay: -1.5s;
+  animation-duration: 5s;
+}
+.corazon:nth-child(8) {
+  left: 58%;
+  animation-delay: -4.5s;
+  animation-duration: 6s;
+}
+.corazon:nth-child(9) {
+  left: 67%;
+  animation-delay: -2.5s;
+  animation-duration: 7s;
+}
+.corazon:nth-child(10) {
+  left: 75%;
+  animation-delay: -7s;
+  animation-duration: 8s;
+}
+.corazon:nth-child(11) {
+  left: 82%;
+  animation-delay: -3.5s;
+  animation-duration: 5s;
+}
+.corazon:nth-child(12) {
+  left: 90%;
+  animation-delay: -5.5s;
+  animation-duration: 6s;
+}
+.corazon:nth-child(13) {
+  left: 8%;
+  animation-delay: -0.5s;
+  animation-duration: 7s;
+}
+.corazon:nth-child(14) {
+  left: 38%;
+  animation-delay: -6.5s;
+  animation-duration: 5s;
+}
+.corazon:nth-child(15) {
+  left: 62%;
+  animation-delay: -2s;
+  animation-duration: 8s;
+}
+.corazon:nth-child(16) {
+  left: 97%;
+  animation-delay: -4s;
+  animation-duration: 6s;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Invitación con lacre */
+.invitacion-lacre {
   text-align: center;
+  padding: 40px;
   position: relative;
   z-index: 2;
 }
 
-.carta-sello {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  animation: float 3s ease-in-out infinite;
+.invitacion-texto {
+  margin-bottom: 40px;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.carta-subtitulo {
+.lacre-subtitulo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #8b7355;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
-.carta-titulo {
+.lacre-a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  color: #a89070;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.lacre-nombres {
   font-family: "Great Vibes", cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   color: #2c2c2c;
   margin-bottom: 15px;
-  line-height: 1.2;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.carta-titulo span {
+.lacre-nombres span {
   color: #d4a574;
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
-.carta-fecha {
+.lacre-fecha {
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  color: #8b7355;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-
-.carta-ornamento {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #d4a574;
-  margin-bottom: 25px;
+  letter-spacing: 5px;
 }
 
-.btn-abrir {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 30px;
-  background: linear-gradient(135deg, #d4a574 0%, #c97f3f 100%);
-  color: white;
+/* Sello de lacre */
+.sello-container {
+  margin: 30px 0;
+}
+
+.sello-lacre {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #c9302c 0%, #8b0000 60%, #5c0000 100%);
   border: none;
-  border-radius: 50px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
+  position: relative;
+  box-shadow:
+    0 8px 30px rgba(139, 0, 0, 0.6),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.3),
+    inset 0 5px 15px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.4);
+  animation: pulsar 2s ease-in-out infinite;
 }
 
-.btn-abrir:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(212, 165, 116, 0.5);
+.sello-lacre:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 12px 40px rgba(139, 0, 0, 0.8),
+    inset 0 -5px 15px rgba(0, 0, 0, 0.3),
+    inset 0 5px 15px rgba(255, 255, 255, 0.1);
 }
 
-.btn-abrir i {
-  font-size: 1.2rem;
+.sello-lacre:active {
+  transform: scale(0.95);
+}
+
+@keyframes pulsar {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 30px rgba(139, 0, 0, 0.6),
+      inset 0 -5px 15px rgba(0, 0, 0, 0.3),
+      inset 0 5px 15px rgba(255, 255, 255, 0.1),
+      0 0 0 0 rgba(212, 165, 116, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 8px 30px rgba(139, 0, 0, 0.6),
+      inset 0 -5px 15px rgba(0, 0, 0, 0.3),
+      inset 0 5px 15px rgba(255, 255, 255, 0.1),
+      0 0 0 20px rgba(212, 165, 116, 0);
+  }
+}
+
+.sello-borde {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.sello-interior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sello-iniciales {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
+
+.sello-texto {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* Líneas decorativas */
+.lineas-decorativas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.lineas-decorativas span {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .lacre-nombres {
+    font-size: 2.8rem;
+  }
+
+  .lacre-subtitulo {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .sello-lacre {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sello-iniciales {
+    font-size: 2rem;
+  }
+
+  .invitacion-lacre {
+    padding: 20px;
+  }
 }
 
 /* Contenido principal oculto inicialmente */
@@ -194,28 +359,6 @@ body.scroll-bloqueado {
   }
   to {
     opacity: 1;
-  }
-}
-
-@media (max-width: 480px) {
-  .carta {
-    padding: 30px 20px;
-  }
-
-  .carta-titulo {
-    font-size: 2.3rem;
-  }
-
-  .sobre-solapa {
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 60px solid #d4a574;
-    top: -45px;
-  }
-
-  .btn-abrir {
-    padding: 12px 25px;
-    font-size: 0.9rem;
   }
 }
 
@@ -704,6 +847,116 @@ h2 {
 
 .btn-rsvp i {
   color: #e74c3c;
+}
+
+/* ===== SECCIÓN REGALO ===== */
+.gift-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #8b7355 0%, #a89070 100%);
+  text-align: center;
+}
+
+.gift-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.gift-section > .container > p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cuenta-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 20px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cuenta-container:hover:not(.revelado) {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.cuenta-container.revelado {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #d4a574;
+  cursor: default;
+}
+
+.cuenta-oculta {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cuenta-oculta i {
+  font-size: 1.3rem;
+  animation: pulseGift 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGift {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.cuenta-visible {
+  display: none;
+  color: #2c2c2c;
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeInCuenta 0.5s ease;
+}
+
+@keyframes fadeInCuenta {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.btn-copiar {
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #d4a574;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-copiar:hover {
+  background: #c9956a;
+  transform: translateY(-2px);
 }
 
 /* ===== FOOTER ===== */

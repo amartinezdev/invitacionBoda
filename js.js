@@ -95,3 +95,28 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContador();
   inicializarMusica();
 });
+
+// Revelar número de cuenta
+function revelarCuenta() {
+  const oculto = document.getElementById("cuenta-oculta");
+  const visible = document.getElementById("cuenta-visible");
+  const btnCopiar = document.getElementById("btn-copiar");
+  const container = document.getElementById("cuenta-container");
+
+  oculto.style.display = "none";
+  visible.style.display = "block";
+  btnCopiar.style.display = "inline-flex";
+  container.classList.add("revelado");
+}
+
+// Copiar número de cuenta al portapapeles
+function copiarCuenta() {
+  const cuenta = "ES44 0081 2804 6400 0403 9913";
+  navigator.clipboard.writeText(cuenta).then(() => {
+    const btn = document.getElementById("btn-copiar");
+    btn.innerHTML = '<i class="fas fa-check"></i> Copiado';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-copy"></i> Copiar';
+    }, 2000);
+  });
+}
